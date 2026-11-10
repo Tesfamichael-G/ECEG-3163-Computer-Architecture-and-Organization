@@ -1,0 +1,1924 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="BSc Electrical Engineering (Computer) · Semester VII · Module Data Storage and Analysis">
+      
+      
+        <meta name="author" content="Your Name">
+      
+      
+        <link rel="canonical" href="https://tesfamichael-g.github.io/ECEG-3163-Computer-Architecture-and-Organization/slides/01-introduction-performance/">
+      
+      
+        <link rel="prev" href="../../chapters/07-advanced-topics/">
+      
+      
+        <link rel="next" href="../02-computer-arithmetic/">
+      
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.5.3, mkdocs-material-9.5.3">
+    
+    
+      
+        <title>1. Introduction and Performance - ECEG-4192 — Data Structures</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.50c56a3b.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.06af60db.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#eceg-3163" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="ECEG-4192 — Data Structures" class="md-header__button md-logo" aria-label="ECEG-4192 — Data Structures" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 3h6v4H3V3m12 7h6v4h-6v-4m0 7h6v4h-6v-4m-2-4H7v5h6v2H5V9h2v2h6v2Z"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            ECEG-4192 — Data Structures
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              1. Introduction and Performance
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m17.75 4.09-2.53 1.94.91 3.06-2.63-1.81-2.63 1.81.91-3.06-2.53-1.94L12.44 4l1.06-3 1.06 3 3.19.09m3.5 6.91-1.64 1.25.59 1.98-1.7-1.17-1.7 1.17.59-1.98L15.75 11l2.06-.05L18.5 9l.69 1.95 2.06.05m-2.28 4.95c.83-.08 1.72 1.1 1.19 1.85-.32.45-.66.87-1.08 1.27C15.17 23 8.84 23 4.94 19.07c-3.91-3.9-3.91-10.24 0-14.14.4-.4.82-.76 1.27-1.08.75-.53 1.93.36 1.85 1.19-.27 2.86.69 5.83 2.89 8.02a9.96 9.96 0 0 0 8.02 2.89m-1.64 2.02a12.08 12.08 0 0 1-7.8-3.47c-2.17-2.19-3.33-5-3.49-7.82-2.81 3.14-2.7 7.96.31 10.98 3.02 3.01 7.84 3.12 10.98.31Z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 7a5 5 0 0 1 5 5 5 5 0 0 1-5 5 5 5 0 0 1-5-5 5 5 0 0 1 5-5m0 2a3 3 0 0 0-3 3 3 3 0 0 0 3 3 3 3 0 0 0 3-3 3 3 0 0 0-3-3m0-7 2.39 3.42C13.65 5.15 12.84 5 12 5c-.84 0-1.65.15-2.39.42L12 2M3.34 7l4.16-.35A7.2 7.2 0 0 0 5.94 8.5c-.44.74-.69 1.5-.83 2.29L3.34 7m.02 10 1.76-3.77a7.131 7.131 0 0 0 2.38 4.14L3.36 17M20.65 7l-1.77 3.79a7.023 7.023 0 0 0-2.38-4.15l4.15.36m-.01 10-4.14.36c.59-.51 1.12-1.14 1.54-1.86.42-.73.69-1.5.83-2.29L20.64 17M12 22l-2.41-3.44c.74.27 1.55.44 2.41.44.82 0 1.63-.17 2.37-.44L12 22Z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var media,input,key,value,palette=__md_get("__palette");if(palette&&palette.color){"(prefers-color-scheme)"===palette.color.media&&(media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']"),palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent"));for([key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../.." class="md-tabs__link">
+        
+  
+    
+  
+  Home
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../syllabus/" class="md-tabs__link">
+        
+  
+    
+  
+  Syllabus
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../schedule/" class="md-tabs__link">
+        
+  
+    
+  
+  Schedule
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../chapters/01-introduction-performance/" class="md-tabs__link">
+          
+  
+    
+  
+  Chapters
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+    
+  
+  
+    
+    
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="./" class="md-tabs__link">
+          
+  
+    
+  
+  Slides
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../solutions/" class="md-tabs__link">
+          
+  
+    
+  
+  Solutions
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../exam-bank/" class="md-tabs__link">
+        
+  
+    
+  
+  Exam Bank
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../assessment/" class="md-tabs__link">
+        
+  
+    
+  
+  Assessment
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../resources/" class="md-tabs__link">
+        
+  
+    
+  
+  Resources
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../feedback/" class="md-tabs__link">
+        
+  
+    
+  
+  Feedback
+
+      </a>
+    </li>
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="ECEG-4192 — Data Structures" class="md-nav__button md-logo" aria-label="ECEG-4192 — Data Structures" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 3h6v4H3V3m12 7h6v4h-6v-4m0 7h6v4h-6v-4m-2-4H7v5h6v2H5V9h2v2h6v2Z"/></svg>
+
+    </a>
+    ECEG-4192 — Data Structures
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Home
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../syllabus/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Syllabus
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../schedule/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Schedule
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+      
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="">
+            
+  
+  <span class="md-ellipsis">
+    Chapters
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            Chapters
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chapters/01-introduction-performance/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    1. Introduction and Performance
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chapters/02-computer-arithmetic/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    2. Computer Arithmetic
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chapters/03-instruction-sets/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    3. Instruction Sets
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chapters/04-pipelining-control/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    4. Pipelining and Control
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chapters/05-memory-systems/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    5. Memory Systems
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chapters/06-io-systems/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    6. I/O Systems
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chapters/07-advanced-topics/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    7. Advanced Topics
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+      
+      
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="">
+            
+  
+  <span class="md-ellipsis">
+    Slides
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            Slides
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    1. Introduction and Performance
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  <span class="md-ellipsis">
+    1. Introduction and Performance
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#chapter-1-introduction-and-performance" class="md-nav__link">
+    <span class="md-ellipsis">
+      Chapter 1 — Introduction and Performance
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#11-organization-vs-architecture" class="md-nav__link">
+    <span class="md-ellipsis">
+      1.1 — Organization vs Architecture
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#12-evolution-of-computing" class="md-nav__link">
+    <span class="md-ellipsis">
+      1.2 — Evolution of Computing
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#13-the-von-neumann-bottleneck" class="md-nav__link">
+    <span class="md-ellipsis">
+      1.3 — The Von Neumann Bottleneck
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#14-the-von-neumann-model" class="md-nav__link">
+    <span class="md-ellipsis">
+      1.4 — The Von Neumann Model
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#15-the-instruction-cycle" class="md-nav__link">
+    <span class="md-ellipsis">
+      1.5 — The Instruction Cycle
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#16-performance-metrics" class="md-nav__link">
+    <span class="md-ellipsis">
+      1.6 — Performance Metrics
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#worked-example-11-cpu-time-and-mips" class="md-nav__link">
+    <span class="md-ellipsis">
+      Worked example 1.1 — CPU time and MIPS
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#17-amdahls-law" class="md-nav__link">
+    <span class="md-ellipsis">
+      1.7 — Amdahl's Law
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#worked-example-12-amdahls-law" class="md-nav__link">
+    <span class="md-ellipsis">
+      Worked example 1.2 — Amdahl's law
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#18-benchmarks" class="md-nav__link">
+    <span class="md-ellipsis">
+      1.8 — Benchmarks
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#chapter-1-key-takeaways" class="md-nav__link">
+    <span class="md-ellipsis">
+      Chapter 1 — key takeaways
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#next-chapter-2" class="md-nav__link">
+    <span class="md-ellipsis">
+      Next — Chapter 2
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../02-computer-arithmetic/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    2. Computer Arithmetic
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../03-instruction-sets/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    3. Instruction Sets
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../04-pipelining-control/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    4. Pipelining and Control
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../05-memory-systems/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    5. Memory Systems
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../06-io-systems/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    6. I/O Systems
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../07-advanced-topics/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    7. Advanced Topics
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+      
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6" >
+        
+          
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../solutions/" class="md-nav__link ">
+              
+  
+  <span class="md-ellipsis">
+    Solutions
+  </span>
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_6" id="__nav_6_label" tabindex="">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6">
+            <span class="md-nav__icon md-icon"></span>
+            Solutions
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../solutions/01-introduction-performance/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    1. Introduction and Performance
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../solutions/02-computer-arithmetic/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    2. Computer Arithmetic
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../solutions/03-instruction-sets/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    3. Instruction Sets
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../solutions/04-pipelining-control/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    4. Pipelining and Control
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../solutions/05-memory-systems/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    5. Memory Systems
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../solutions/06-io-systems/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    6. I/O Systems
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../solutions/07-advanced-topics/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    7. Advanced Topics
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../exam-bank/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Exam Bank
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../assessment/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Assessment
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../resources/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Resources
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../feedback/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Feedback
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#chapter-1-introduction-and-performance" class="md-nav__link">
+    <span class="md-ellipsis">
+      Chapter 1 — Introduction and Performance
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#11-organization-vs-architecture" class="md-nav__link">
+    <span class="md-ellipsis">
+      1.1 — Organization vs Architecture
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#12-evolution-of-computing" class="md-nav__link">
+    <span class="md-ellipsis">
+      1.2 — Evolution of Computing
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#13-the-von-neumann-bottleneck" class="md-nav__link">
+    <span class="md-ellipsis">
+      1.3 — The Von Neumann Bottleneck
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#14-the-von-neumann-model" class="md-nav__link">
+    <span class="md-ellipsis">
+      1.4 — The Von Neumann Model
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#15-the-instruction-cycle" class="md-nav__link">
+    <span class="md-ellipsis">
+      1.5 — The Instruction Cycle
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#16-performance-metrics" class="md-nav__link">
+    <span class="md-ellipsis">
+      1.6 — Performance Metrics
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#worked-example-11-cpu-time-and-mips" class="md-nav__link">
+    <span class="md-ellipsis">
+      Worked example 1.1 — CPU time and MIPS
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#17-amdahls-law" class="md-nav__link">
+    <span class="md-ellipsis">
+      1.7 — Amdahl's Law
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#worked-example-12-amdahls-law" class="md-nav__link">
+    <span class="md-ellipsis">
+      Worked example 1.2 — Amdahl's law
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#18-benchmarks" class="md-nav__link">
+    <span class="md-ellipsis">
+      1.8 — Benchmarks
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#chapter-1-key-takeaways" class="md-nav__link">
+    <span class="md-ellipsis">
+      Chapter 1 — key takeaways
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#next-chapter-2" class="md-nav__link">
+    <span class="md-ellipsis">
+      Next — Chapter 2
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+<h1 id="eceg-3163">ECEG-3163<a class="headerlink" href="#eceg-3163" title="Permanent link">&para;</a></h1>
+<h2 id="chapter-1-introduction-and-performance">Chapter 1 — Introduction and Performance<a class="headerlink" href="#chapter-1-introduction-and-performance" title="Permanent link">&para;</a></h2>
+<hr />
+<h2 id="11-organization-vs-architecture">1.1 — Organization vs Architecture<a class="headerlink" href="#11-organization-vs-architecture" title="Permanent link">&para;</a></h2>
+<details class="note" open="open">
+<summary>Definition (Stallings §1.1)</summary>
+<p><strong>Computer architecture</strong> = attributes <strong>visible to a programmer</strong>: instruction set, data types, addressing modes, I/O mechanisms.</p>
+<p><strong>Computer organization</strong> = the <strong>operational units and their interconnections</strong> that realize the architecture: control signals, memory technology, interfaces.</p>
+</details>
+<div class="fragment">
+
+| Aspect | Architecture | Organization |
+|---|---|---|
+| Visible to programmer? | **Yes** | **No** |
+| Example | Does `MUL` exist? | Is `MUL` a hardware multiplier or repeated add? |
+| Example | Word size (32 / 64 bits) | SRAM vs. DRAM for main memory |
+| Example | Number of registers | Physical wiring of the register file |
+
+</div>
+
+<div class="fragment">
+
+!!! tip "Why the distinction matters"
+    Two CPUs can be **architecturally identical** but **organizationally different** — the same x86 binaries run on Intel and AMD CPUs, but their microarchitectures, power envelopes, and performance profiles differ enormously.
+
+</div>
+
+<aside class="notes">
+  <div style="font-size: 16px; line-height: 1.6;">
+Open by anchoring the two words: architecture is the *contract*, organization is the *implementation*. Analogy: architecture is the Java language spec, organization is the JIT compiler. Every subsequent chapter alternates between the two — Chapter 3 is mostly architecture, Chapters 4–5 are mostly organization.
+  </div>
+</aside>
+
+<hr />
+<h2 id="12-evolution-of-computing">1.2 — Evolution of Computing<a class="headerlink" href="#12-evolution-of-computing" title="Permanent link">&para;</a></h2>
+<details class="note" open="open">
+<summary>The four generations</summary>
+<p><strong>1st (1945–1955):</strong> vacuum tubes, ENIAC, ~5000 additions/s.
+<strong>2nd (1955–1965):</strong> transistors, IBM 7094.
+<strong>3rd (1965–1980):</strong> integrated circuits, IBM System/360, PDP-11.
+<strong>4th (1980–present):</strong> VLSI, PCs, mobile, servers.</p>
+</details>
+<div class="fragment">
+
+!!! abstract "Moore's law"
+    The number of transistors on a chip **doubles approximately every 18–24 months**, and the cost per transistor falls proportionally.
+
+</div>
+
+<div class="fragment">
+
+??? warning "Moore's law has slowed since ~2010"
+    - **Power density** (Dennard scaling) broke down — smaller transistors no longer run cooler.
+    - **Manufacturing costs** rise steeply at 7 nm / 5 nm / 3 nm.
+    - **Physical limits** — transistor size and wire delay.
+
+    The industry's response: shift from **higher clock speed** to **more parallelism** (multicore, GPUs, accelerators).
+
+</div>
+
+<hr />
+<h2 id="13-the-von-neumann-bottleneck">1.3 — The Von Neumann Bottleneck<a class="headerlink" href="#13-the-von-neumann-bottleneck" title="Permanent link">&para;</a></h2>
+<details class="note" open="open">
+<summary>Von Neumann model</summary>
+<p>Instructions and data share <strong>the same memory</strong> and <strong>the same bus</strong> between CPU and memory. The CPU cannot fetch an instruction and a data word in the same cycle.</p>
+</details>
+<div class="fragment">
+
+!!! warning "The bottleneck"
+    The bus between CPU and memory is a shared resource. Memory bandwidth — not ALU speed — limits throughput for many workloads.
+
+</div>
+
+<div class="fragment">
+
+??? info "The Harvard alternative"
+    **Harvard architecture** separates instruction and data memories, doubling the effective bandwidth. Modern CPUs use a **modified Harvard** design — separate L1 instruction and data caches, unified L2/L3.
+
+</div>
+
+<hr />
+<h2 id="14-the-von-neumann-model">1.4 — The Von Neumann Model<a class="headerlink" href="#14-the-von-neumann-model" title="Permanent link">&para;</a></h2>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>┌─────────────┐         ┌──────────────┐
+</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>│             │◄───────►│              │
+</span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>│    CPU      │  Bus    │    Memory    │
+</span><span id="__span-0-4"><a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a>│             │◄───────►│              │
+</span><span id="__span-0-5"><a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a>└─────┬───────┘         └──────────────┘
+</span><span id="__span-0-6"><a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a>      │
+</span><span id="__span-0-7"><a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a>┌─────▼───────┐
+</span><span id="__span-0-8"><a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a>│  I/O        │
+</span><span id="__span-0-9"><a id="__codelineno-0-9" name="__codelineno-0-9" href="#__codelineno-0-9"></a>│  Devices    │
+</span><span id="__span-0-10"><a id="__codelineno-0-10" name="__codelineno-0-10" href="#__codelineno-0-10"></a>└─────────────┘
+</span></code></pre></div>
+<div class="fragment">
+
+???+ note "Four components"
+    1. **CPU** — ALU, control unit, registers.
+    2. **Memory** — stores both instructions and data.
+    3. **I/O** — outside-world interface.
+    4. **Bus** — carries addresses, data, and control signals.
+
+</div>
+
+<hr />
+<h2 id="15-the-instruction-cycle">1.5 — The Instruction Cycle<a class="headerlink" href="#15-the-instruction-cycle" title="Permanent link">&para;</a></h2>
+<details class="note" open="open">
+<summary>Fetch → Decode → Execute</summary>
+<p>The CPU repeats three phases for every instruction.</p>
+</details>
+<div class="fragment">
+
+???+ info "**Fetch**"
+    1. CPU puts the value of the **PC** on the address bus.
+    2. Memory returns the instruction at that address.
+    3. CPU loads the instruction into the **IR** and increments the **PC**.
+
+</div>
+
+<div class="fragment">
+
+??? info "**Decode**"
+    1. Control unit reads the **opcode** and determines the instruction type.
+    2. Source operands are read from the register file.
+
+</div>
+
+<div class="fragment">
+
+??? info "**Execute**"
+    1. ALU performs the operation (or memory access, or branch).
+    2. Result is written back to a register (or memory).
+
+</div>
+
+<div class="fragment">
+
+!!! tip "Five stages, five cycles"
+    Modern CPUs split memory access and write-back into separate stages, yielding the **five-stage pipeline** (Chapter 4): IF, ID, EX, MEM, WB.
+
+</div>
+
+<hr />
+<h2 id="16-performance-metrics">1.6 — Performance Metrics<a class="headerlink" href="#16-performance-metrics" title="Permanent link">&para;</a></h2>
+<details class="abstract" open="open">
+<summary>The CPU performance equation (Patterson &amp; Hennessy)</summary>
+<div class="arithmatex">\[
+\text{CPU time} = \text{IC} \times \text{CPI} \times \tau
+= \frac{\text{IC} \times \text{CPI}}{f}
+\]</div>
+<p>where <span class="arithmatex">\(\text{IC}\)</span> = instruction count, <span class="arithmatex">\(\text{CPI}\)</span> = cycles per instruction, <span class="arithmatex">\(f\)</span> = clock frequency.</p>
+</details>
+<div class="fragment">
+
+??? warning "The three factors are interdependent"
+    - Fewer instructions (CISC-style) → higher CPI.
+    - Higher clock (shorter cycles) → higher CPI (harder pipeline balance).
+    - Optimising one factor often worsens another.
+
+</div>
+
+<div class="fragment">
+
+???+ note "**MIPS** — millions of instructions per second"
+    $$
+    \text{MIPS} = \frac{f}{\text{CPI} \times 10^6}
+    $$
+
+    Misleading: ignores instruction complexity. A CISC machine can have higher MIPS but lower throughput than a RISC machine.
+
+</div>
+
+<hr />
+<h2 id="worked-example-11-cpu-time-and-mips">Worked example 1.1 — CPU time and MIPS<a class="headerlink" href="#worked-example-11-cpu-time-and-mips" title="Permanent link">&para;</a></h2>
+<div class="admonition tip">
+<p class="admonition-title">Problem:</p>
+<p>Given IC = <span class="arithmatex">\(10^8\)</span> instructions, CPI = 2.5, clock = 4 GHz.</p>
+</div>
+<div class="fragment">
+
+???+ note "**Step 1 — CPU time.**"
+    $$
+    T = \frac{10^8 \times 2.5}{4 \times 10^9} = 0.0625\ \text{s} = \mathbf{62.5\ \text{ms}}
+    $$
+
+</div>
+
+<div class="fragment">
+
+??? info "**Step 2 — MIPS.**"
+    $$
+    \text{MIPS} = \frac{4 \times 10^9}{2.5 \times 10^6} = \mathbf{1600\ \text{MIPS}}
+    $$
+
+</div>
+
+<div class="fragment">
+
+??? success "**Conclusion.**"
+    The program takes 62.5 ms and the CPU sustains 1600 MIPS — a consistent pair.
+
+</div>
+
+<aside class="notes">
+  <div style="font-size: 16px; line-height: 1.6;">
+Walk through the arithmetic. Emphasise that MIPS is derivable from the CPU-time formula — the same information in a different unit. Then ask: if we double the clock and CPI rises to 4, what happens? T stays the same. This motivates Amdahl's law and pipeline awareness.
+  </div>
+</aside>
+
+<hr />
+<h2 id="17-amdahls-law">1.7 — Amdahl's Law<a class="headerlink" href="#17-amdahls-law" title="Permanent link">&para;</a></h2>
+<details class="abstract" open="open">
+<summary>Amdahl's law</summary>
+<p>If a fraction <span class="arithmatex">\(f\)</span> of the execution time is improved by a factor <span class="arithmatex">\(s\)</span>, the overall speedup is</p>
+<div class="arithmatex">\[
+S = \frac{1}{(1 - f) + \dfrac{f}{s}}
+\]</div>
+<p>As <span class="arithmatex">\(s \to \infty\)</span>, <span class="arithmatex">\(S \to \dfrac{1}{1 - f}\)</span>.</p>
+</details>
+<div class="fragment">
+
+!!! warning "The fundamental limit"
+    An optimisation that only touches $10\%$ of the code can give **at most** a $1.11\times$ speedup — regardless of how fast the improvement is.
+
+</div>
+
+<div class="fragment">
+
+??? tip "The argument for parallelism"
+    As the serial fraction approaches zero, the potential speedup approaches the processor count. This is why multicore exists: it attacks the **serial bottleneck**.
+
+</div>
+
+<hr />
+<h2 id="worked-example-12-amdahls-law">Worked example 1.2 — Amdahl's law<a class="headerlink" href="#worked-example-12-amdahls-law" title="Permanent link">&para;</a></h2>
+<div class="admonition tip">
+<p class="admonition-title">Problem:</p>
+<p>A program spends <strong>60%</strong> of its time in a routine made <strong>3× faster</strong>. Compute the speedup, and the maximum possible speedup.</p>
+</div>
+<div class="fragment">
+
+???+ note "**Step 1 — apply the formula.**"
+    $$
+    S = \frac{1}{(1 - 0.60) + 0.60/3}
+    = \frac{1}{0.40 + 0.20}
+    = \frac{1}{0.60} \approx \mathbf{1.667}
+    $$
+
+</div>
+
+<div class="fragment">
+
+??? info "**Step 2 — maximum possible speedup.**"
+    Even if the routine became **infinitely fast** ($s \to \infty$):
+
+    $$
+    S_{\max} = \frac{1}{1 - 0.60} = \mathbf{2.5}
+    $$
+
+</div>
+
+<div class="fragment">
+
+??? success "**Interpretation.**"
+    The whole program only gets **1.67× faster**, because the other 40% now dominates. No improvement of that routine — no matter how clever — can exceed 2.5×.
+
+</div>
+
+<hr />
+<h2 id="18-benchmarks">1.8 — Benchmarks<a class="headerlink" href="#18-benchmarks" title="Permanent link">&para;</a></h2>
+<details class="note" open="open">
+<summary>Standard benchmark suites</summary>
+<ul>
+<li><strong>SPEC CPU</strong> — integer and floating-point.</li>
+<li><strong>SPECpower</strong> — energy efficiency.</li>
+<li><strong>Geekbench</strong> — mobile and desktop.</li>
+<li><strong>STREAM</strong> — memory bandwidth.</li>
+<li><strong>Linpack</strong> — floating-point (TOP500 supercomputer ranking).</li>
+</ul>
+</details>
+<div class="fragment">
+
+??? warning "Benchmarks are imperfect"
+    Vendors can optimise for the benchmark. Real workloads vary enormously. Use benchmarks as a **starting point**, never the whole answer — always test with **your** workload.
+
+</div>
+
+<hr />
+<h2 id="chapter-1-key-takeaways">Chapter 1 — key takeaways<a class="headerlink" href="#chapter-1-key-takeaways" title="Permanent link">&para;</a></h2>
+<div class="fragment">
+
+**1.** **Architecture** is what the programmer sees; **organization** is how it's built. The same architecture has many organizations.
+
+</div>
+
+<div class="fragment">
+
+**2.** **Moore's law** drove 40 years of exponential improvement. It has slowed since ~2010 — the response is **parallelism**, not clock speed.
+
+</div>
+
+<div class="fragment">
+
+**3.** The **Von Neumann bottleneck** — a shared bus for instructions and data — is why caches, prefetch, and Harvard-style L1s exist.
+
+</div>
+
+<div class="fragment">
+
+**4.** **CPU time = IC × CPI × τ**. The three factors trade off against each other.
+
+</div>
+
+<div class="fragment">
+
+**5.** **Amdahl's law** bounds every optimisation by the serial fraction it doesn't touch. The limit is $1/(1-f)$.
+
+</div>
+
+<hr />
+<h2 id="next-chapter-2">Next — Chapter 2<a class="headerlink" href="#next-chapter-2" title="Permanent link">&para;</a></h2>
+<p><strong>Computer Arithmetic.</strong></p>
+<div class="fragment">
+
+- Signed number representations: sign-magnitude, 1's complement, 2's complement, biased.
+- Integer addition and subtraction; overflow detection at the bit level.
+- Multiplication: shift-add, **Booth's algorithm**.
+- Division: restoring, non-restoring.
+- **IEEE-754** floating point: single and double precision, special values, rounding.
+
+</div>
+
+<div class="fragment">
+
+Every arithmetic operation you will meet inside a CPU is an instance of one of these algorithms — usually with a hardware accelerator.
+
+</div>
+
+
+
+
+
+
+
+  
+  
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8v12Z"/></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.tabs", "navigation.sections", "navigation.top", "navigation.indexes", "navigation.tracking", "content.code.copy", "search.suggest", "search.highlight", "toc.follow"], "search": "../../assets/javascripts/workers/search.f886a092.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.d7c377c4.min.js"></script>
+      
+        <script src="../../javascripts/mathjax.js"></script>
+      
+        <script src="https://unpkg.com/mathjax@3/es5/tex-mml-chtml.js"></script>
+      
+    
+  </body>
+</html>

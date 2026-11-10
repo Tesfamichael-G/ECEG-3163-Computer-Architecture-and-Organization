@@ -1,0 +1,1858 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="BSc Electrical Engineering (Computer) · Semester VII · Module Data Storage and Analysis">
+      
+      
+        <meta name="author" content="Your Name">
+      
+      
+        <link rel="canonical" href="https://tesfamichael-g.github.io/ECEG-3163-Computer-Architecture-and-Organization/syllabus/">
+      
+      
+        <link rel="prev" href="..">
+      
+      
+        <link rel="next" href="../schedule/">
+      
+      
+      <link rel="icon" href="../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.5.3, mkdocs-material-9.5.3">
+    
+    
+      
+        <title>Syllabus - ECEG-4192 — Data Structures</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.50c56a3b.min.css">
+      
+        
+        <link rel="stylesheet" href="../assets/stylesheets/palette.06af60db.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#syllabus" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href=".." title="ECEG-4192 — Data Structures" class="md-header__button md-logo" aria-label="ECEG-4192 — Data Structures" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 3h6v4H3V3m12 7h6v4h-6v-4m0 7h6v4h-6v-4m-2-4H7v5h6v2H5V9h2v2h6v2Z"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            ECEG-4192 — Data Structures
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Syllabus
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m17.75 4.09-2.53 1.94.91 3.06-2.63-1.81-2.63 1.81.91-3.06-2.53-1.94L12.44 4l1.06-3 1.06 3 3.19.09m3.5 6.91-1.64 1.25.59 1.98-1.7-1.17-1.7 1.17.59-1.98L15.75 11l2.06-.05L18.5 9l.69 1.95 2.06.05m-2.28 4.95c.83-.08 1.72 1.1 1.19 1.85-.32.45-.66.87-1.08 1.27C15.17 23 8.84 23 4.94 19.07c-3.91-3.9-3.91-10.24 0-14.14.4-.4.82-.76 1.27-1.08.75-.53 1.93.36 1.85 1.19-.27 2.86.69 5.83 2.89 8.02a9.96 9.96 0 0 0 8.02 2.89m-1.64 2.02a12.08 12.08 0 0 1-7.8-3.47c-2.17-2.19-3.33-5-3.49-7.82-2.81 3.14-2.7 7.96.31 10.98 3.02 3.01 7.84 3.12 10.98.31Z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 7a5 5 0 0 1 5 5 5 5 0 0 1-5 5 5 5 0 0 1-5-5 5 5 0 0 1 5-5m0 2a3 3 0 0 0-3 3 3 3 0 0 0 3 3 3 3 0 0 0 3-3 3 3 0 0 0-3-3m0-7 2.39 3.42C13.65 5.15 12.84 5 12 5c-.84 0-1.65.15-2.39.42L12 2M3.34 7l4.16-.35A7.2 7.2 0 0 0 5.94 8.5c-.44.74-.69 1.5-.83 2.29L3.34 7m.02 10 1.76-3.77a7.131 7.131 0 0 0 2.38 4.14L3.36 17M20.65 7l-1.77 3.79a7.023 7.023 0 0 0-2.38-4.15l4.15.36m-.01 10-4.14.36c.59-.51 1.12-1.14 1.54-1.86.42-.73.69-1.5.83-2.29L20.64 17M12 22l-2.41-3.44c.74.27 1.55.44 2.41.44.82 0 1.63-.17 2.37-.44L12 22Z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var media,input,key,value,palette=__md_get("__palette");if(palette&&palette.color){"(prefers-color-scheme)"===palette.color.media&&(media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']"),palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent"));for([key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href=".." class="md-tabs__link">
+        
+  
+    
+  
+  Home
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+    
+  
+  
+    <li class="md-tabs__item md-tabs__item--active">
+      <a href="./" class="md-tabs__link">
+        
+  
+    
+  
+  Syllabus
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../schedule/" class="md-tabs__link">
+        
+  
+    
+  
+  Schedule
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../chapters/01-introduction-performance/" class="md-tabs__link">
+          
+  
+    
+  
+  Chapters
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../slides/01-introduction-performance/" class="md-tabs__link">
+          
+  
+    
+  
+  Slides
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../solutions/" class="md-tabs__link">
+          
+  
+    
+  
+  Solutions
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../exam-bank/" class="md-tabs__link">
+        
+  
+    
+  
+  Exam Bank
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../assessment/" class="md-tabs__link">
+        
+  
+    
+  
+  Assessment
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../resources/" class="md-tabs__link">
+        
+  
+    
+  
+  Resources
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../feedback/" class="md-tabs__link">
+        
+  
+    
+  
+  Feedback
+
+      </a>
+    </li>
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="ECEG-4192 — Data Structures" class="md-nav__button md-logo" aria-label="ECEG-4192 — Data Structures" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 3h6v4H3V3m12 7h6v4h-6v-4m0 7h6v4h-6v-4m-2-4H7v5h6v2H5V9h2v2h6v2Z"/></svg>
+
+    </a>
+    ECEG-4192 — Data Structures
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href=".." class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Home
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    Syllabus
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  <span class="md-ellipsis">
+    Syllabus
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#course-identification" class="md-nav__link">
+    <span class="md-ellipsis">
+      Course identification
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#student-workload" class="md-nav__link">
+    <span class="md-ellipsis">
+      Student workload
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#course-description" class="md-nav__link">
+    <span class="md-ellipsis">
+      Course description
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#course-objectives-and-competences" class="md-nav__link">
+    <span class="md-ellipsis">
+      Course objectives and competences
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#learning-outcomes" class="md-nav__link">
+    <span class="md-ellipsis">
+      Learning outcomes
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#course-content" class="md-nav__link">
+    <span class="md-ellipsis">
+      Course content
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#laboratory-tutorial-exercises" class="md-nav__link">
+    <span class="md-ellipsis">
+      Laboratory / tutorial exercises
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#project-part-of-the-50-continuous-assessment" class="md-nav__link">
+    <span class="md-ellipsis">
+      Project (part of the 50% continuous assessment)
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#assessment" class="md-nav__link">
+    <span class="md-ellipsis">
+      Assessment
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#textbook-and-references" class="md-nav__link">
+    <span class="md-ellipsis">
+      Textbook and references
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#policies" class="md-nav__link">
+    <span class="md-ellipsis">
+      Policies
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../schedule/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Schedule
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+      
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="">
+            
+  
+  <span class="md-ellipsis">
+    Chapters
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            Chapters
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../chapters/01-introduction-performance/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    1. Introduction and Performance
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../chapters/02-computer-arithmetic/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    2. Computer Arithmetic
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../chapters/03-instruction-sets/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    3. Instruction Sets
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../chapters/04-pipelining-control/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    4. Pipelining and Control
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../chapters/05-memory-systems/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    5. Memory Systems
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../chapters/06-io-systems/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    6. I/O Systems
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../chapters/07-advanced-topics/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    7. Advanced Topics
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+      
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="">
+            
+  
+  <span class="md-ellipsis">
+    Slides
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            Slides
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../slides/01-introduction-performance/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    1. Introduction and Performance
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../slides/02-computer-arithmetic/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    2. Computer Arithmetic
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../slides/03-instruction-sets/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    3. Instruction Sets
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../slides/04-pipelining-control/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    4. Pipelining and Control
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../slides/05-memory-systems/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    5. Memory Systems
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../slides/06-io-systems/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    6. I/O Systems
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../slides/07-advanced-topics/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    7. Advanced Topics
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+      
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6" >
+        
+          
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../solutions/" class="md-nav__link ">
+              
+  
+  <span class="md-ellipsis">
+    Solutions
+  </span>
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_6" id="__nav_6_label" tabindex="">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6">
+            <span class="md-nav__icon md-icon"></span>
+            Solutions
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../solutions/01-introduction-performance/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    1. Introduction and Performance
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../solutions/02-computer-arithmetic/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    2. Computer Arithmetic
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../solutions/03-instruction-sets/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    3. Instruction Sets
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../solutions/04-pipelining-control/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    4. Pipelining and Control
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../solutions/05-memory-systems/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    5. Memory Systems
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../solutions/06-io-systems/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    6. I/O Systems
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../solutions/07-advanced-topics/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    7. Advanced Topics
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../exam-bank/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Exam Bank
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../assessment/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Assessment
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../resources/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Resources
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../feedback/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Feedback
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#course-identification" class="md-nav__link">
+    <span class="md-ellipsis">
+      Course identification
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#student-workload" class="md-nav__link">
+    <span class="md-ellipsis">
+      Student workload
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#course-description" class="md-nav__link">
+    <span class="md-ellipsis">
+      Course description
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#course-objectives-and-competences" class="md-nav__link">
+    <span class="md-ellipsis">
+      Course objectives and competences
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#learning-outcomes" class="md-nav__link">
+    <span class="md-ellipsis">
+      Learning outcomes
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#course-content" class="md-nav__link">
+    <span class="md-ellipsis">
+      Course content
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#laboratory-tutorial-exercises" class="md-nav__link">
+    <span class="md-ellipsis">
+      Laboratory / tutorial exercises
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#project-part-of-the-50-continuous-assessment" class="md-nav__link">
+    <span class="md-ellipsis">
+      Project (part of the 50% continuous assessment)
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#assessment" class="md-nav__link">
+    <span class="md-ellipsis">
+      Assessment
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#textbook-and-references" class="md-nav__link">
+    <span class="md-ellipsis">
+      Textbook and references
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#policies" class="md-nav__link">
+    <span class="md-ellipsis">
+      Policies
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+<h1 id="syllabus">Syllabus<a class="headerlink" href="#syllabus" title="Permanent link">&para;</a></h1>
+<p>Full course outline for <strong>ECEG-3163 — Computer Architecture and Organization</strong>.</p>
+<hr />
+<h2 id="course-identification">Course identification<a class="headerlink" href="#course-identification" title="Permanent link">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Course code</strong></td>
+<td>ECEG-3163</td>
+</tr>
+<tr>
+<td><strong>Course title</strong></td>
+<td>Computer Architecture and Organization</td>
+</tr>
+<tr>
+<td><strong>Credit hours (ECTS)</strong></td>
+<td>5 — 2 lecture + 3 tutorial/lab per week</td>
+</tr>
+<tr>
+<td><strong>Degree program</strong></td>
+<td>BSc Electrical Engineering (Focus Area)</td>
+</tr>
+<tr>
+<td><strong>Module</strong></td>
+<td>Computer Architecture and Programming</td>
+</tr>
+<tr>
+<td><strong>Semester</strong></td>
+<td>VI/6</td>
+</tr>
+<tr>
+<td><strong>Status</strong></td>
+<td>Compulsory</td>
+</tr>
+<tr>
+<td><strong>Pre-requisites</strong></td>
+<td>Digital Logic Design</td>
+</tr>
+<tr>
+<td><strong>Instructor</strong></td>
+<td><em>(insert)</em></td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="student-workload">Student workload<a class="headerlink" href="#student-workload" title="Permanent link">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th style="text-align: center;">Lecture</th>
+<th style="text-align: center;">Tutorial / Lab</th>
+<th style="text-align: center;">Home study</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: center;">2 h</td>
+<td style="text-align: center;">3 h</td>
+<td style="text-align: center;">~5 h</td>
+</tr>
+</tbody>
+</table>
+<p>Total: ~10 hours per week × 18 weeks = <strong>~180 hours</strong> — consistent with 5 ECTS.</p>
+<hr />
+<h2 id="course-description">Course description<a class="headerlink" href="#course-description" title="Permanent link">&para;</a></h2>
+<p>The course introduces the architecture and organization of a computer system and its components. Students learn how the CPU, memory, and I/O subsystems interact; how instructions are represented, decoded, and executed; and how the performance of a computer system is measured and improved. Students design and simulate a basic computer system (Logisim project).</p>
+<hr />
+<h2 id="course-objectives-and-competences">Course objectives and competences<a class="headerlink" href="#course-objectives-and-competences" title="Permanent link">&para;</a></h2>
+<p>Upon completion of this course, students will be able to:</p>
+<ol>
+<li><strong>Introduce</strong> the architecture and organization of a computer system and its components.</li>
+<li><strong>Design and simulate</strong> a basic computer system.</li>
+</ol>
+<hr />
+<h2 id="learning-outcomes">Learning outcomes<a class="headerlink" href="#learning-outcomes" title="Permanent link">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th>#</th>
+<th>Outcome</th>
+<th>Assessed by</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>LO1</td>
+<td>Distinguish organization from architecture and describe the evolution of computing</td>
+<td>A1, Test 1</td>
+</tr>
+<tr>
+<td>LO2</td>
+<td>Perform signed-number and floating-point arithmetic at the bit level</td>
+<td>A2, Test 1</td>
+</tr>
+<tr>
+<td>LO3</td>
+<td>Analyse instruction formats and addressing modes; design simple instruction sets</td>
+<td>A3, Test 1</td>
+</tr>
+<tr>
+<td>LO4</td>
+<td>Design a pipelined CPU datapath and analyse its hazards and speedup</td>
+<td>A4, Test 2</td>
+</tr>
+<tr>
+<td>LO5</td>
+<td>Design a hardwired or microprogrammed control unit</td>
+<td>A5, Test 2</td>
+</tr>
+<tr>
+<td>LO6</td>
+<td>Analyse cache and memory hierarchies; compute AMAT and design cache parameters</td>
+<td>A6, Final</td>
+</tr>
+<tr>
+<td>LO7</td>
+<td>Design I/O subsystems using programmed, interrupt, and DMA techniques</td>
+<td>A7, Final</td>
+</tr>
+<tr>
+<td>LO8</td>
+<td>Describe parallel processing models and their trade-offs</td>
+<td>Project, Final</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="course-content">Course content<a class="headerlink" href="#course-content" title="Permanent link">&para;</a></h2>
+<p><strong>Chapter 1 — Introduction and Performance</strong></p>
+<ul>
+<li>Organization vs architecture</li>
+<li>Computer evolution (generations, Moore's law)</li>
+<li>Von Neumann model</li>
+<li>Basic computer components (CPU, memory, I/O, buses)</li>
+<li>Instruction cycle (fetch-decode-execute)</li>
+<li>Performance metrics: clock rate, CPI, MIPS, FLOPS</li>
+<li>The performance equation</li>
+<li>Amdahl's law</li>
+<li>Benchmarks (SPEC, Geekbench)</li>
+</ul>
+<p><strong>Chapter 2 — Computer Arithmetic</strong></p>
+<ul>
+<li>Number representation: sign-magnitude, 1's complement, 2's complement, biased</li>
+<li>Integer addition and subtraction</li>
+<li>Overflow detection</li>
+<li>Multiplication: shift-add, Booth's algorithm</li>
+<li>Division: restoring, non-restoring</li>
+<li>Floating-point representation: IEEE 754 (single, double, extended)</li>
+<li>Floating-point arithmetic (addition, multiplication)</li>
+<li>Rounding and exceptions</li>
+</ul>
+<p><strong>Chapter 3 — Instruction Sets and CPU Structure</strong></p>
+<ul>
+<li>Instruction set taxonomy (stack, accumulator, general-purpose)</li>
+<li>Instruction formats (R, I, J)</li>
+<li>Addressing modes (immediate, direct, indirect, register, register indirect, indexed, base+offset, relative)</li>
+<li>Operand types and operations</li>
+<li>CPU register organization (PC, IR, MAR, MBR, AC, general-purpose)</li>
+<li>Register transfer notation (RTN)</li>
+<li>Datapath design</li>
+<li>RISC vs CISC</li>
+</ul>
+<p><strong>Chapter 4 — Pipelining and Control Unit</strong></p>
+<ul>
+<li>Pipeline concept and speedup</li>
+<li>Five-stage RISC pipeline</li>
+<li>Hazards: structural, data, control</li>
+<li>Forwarding, stalling, branch prediction</li>
+<li>Superscalar and out-of-order (brief)</li>
+<li>Control unit: hardwired vs microprogrammed</li>
+<li>Microinstruction formats</li>
+<li>Wilkes' control unit model</li>
+<li>Sequencing and control</li>
+</ul>
+<p><strong>Chapter 5 — Memory Systems</strong></p>
+<ul>
+<li>Memory hierarchy and locality of reference</li>
+<li>Memory parameters: capacity, access time, cycle time, bandwidth</li>
+<li>SRAM, DRAM, ROM, flash</li>
+<li>Main memory organization and interleaving</li>
+<li>Cache organization: direct-mapped, set-associative, fully associative</li>
+<li>Cache replacement and write policies</li>
+<li>AMAT and cache performance</li>
+<li>Virtual memory and paging</li>
+<li>TLB</li>
+<li>Secondary memory: HDD and SSD</li>
+</ul>
+<p><strong>Chapter 6 — I/O Systems</strong></p>
+<ul>
+<li>I/O devices (character, block, network)</li>
+<li>I/O modules and interfaces</li>
+<li>Programmed I/O</li>
+<li>Interrupt-driven I/O</li>
+<li>Direct Memory Access (DMA)</li>
+<li>Buses (system, I/O, PCIe)</li>
+<li>Disk I/O performance</li>
+<li>I/O buffering</li>
+</ul>
+<p><strong>Chapter 7 — Advanced Topics</strong></p>
+<ul>
+<li>Parallel processing: SISD, SIMD, MISD, MIMD</li>
+<li>Multicore processors</li>
+<li>GPU computing (CUDA, OpenCL)</li>
+<li>Low-level data structures: stacks, queues, linked lists</li>
+<li>Introduction to operating systems</li>
+<li>Case studies: x86, ARM</li>
+</ul>
+<hr />
+<h2 id="laboratory-tutorial-exercises">Laboratory / tutorial exercises<a class="headerlink" href="#laboratory-tutorial-exercises" title="Permanent link">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th>Lab</th>
+<th>Topic</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>L1</td>
+<td>Logisim — building an ALU</td>
+</tr>
+<tr>
+<td>L2</td>
+<td>Logisim — building a register file</td>
+</tr>
+<tr>
+<td>L3</td>
+<td>MARS — MIPS assembly basics</td>
+</tr>
+<tr>
+<td>L4</td>
+<td>MARS — writing loops, arrays, and procedures in assembly</td>
+</tr>
+<tr>
+<td>L5</td>
+<td>Logisim — assembling a single-cycle CPU datapath</td>
+</tr>
+<tr>
+<td>L6</td>
+<td>Logisim — pipelining the CPU (with hazards)</td>
+</tr>
+<tr>
+<td>L7</td>
+<td>Ripes — pipeline visualization and hazard analysis</td>
+</tr>
+<tr>
+<td>L8</td>
+<td>Cache simulation (MARS or a Python simulator)</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="project-part-of-the-50-continuous-assessment">Project (part of the 50% continuous assessment)<a class="headerlink" href="#project-part-of-the-50-continuous-assessment" title="Permanent link">&para;</a></h2>
+<p>A semester-long project in which students:</p>
+<ol>
+<li>Design a <strong>simple 8-bit or 16-bit CPU</strong> in Logisim.</li>
+<li>Implement the instruction set (a subset of MIPS or a custom ISA).</li>
+<li>Support arithmetic (ADD, SUB), logic (AND, OR), memory (LOAD, STORE), and branching.</li>
+<li>Demonstrate the CPU by running a small test program.</li>
+<li>Extend to a <strong>pipelined</strong> version (optional, extra credit).</li>
+</ol>
+<p><strong>Deliverables:</strong> Logisim circuit file, test programs, written report, and demonstration.</p>
+<hr />
+<h2 id="assessment">Assessment<a class="headerlink" href="#assessment" title="Permanent link">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th>Component</th>
+<th style="text-align: center;">Weight</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Continuous assessment (assignments + tests + project)</td>
+<td style="text-align: center;">50%</td>
+</tr>
+<tr>
+<td>Final examination</td>
+<td style="text-align: center;">50%</td>
+</tr>
+<tr>
+<td><strong>Total</strong></td>
+<td style="text-align: center;"><strong>100%</strong></td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="textbook-and-references">Textbook and references<a class="headerlink" href="#textbook-and-references" title="Permanent link">&para;</a></h2>
+<p><strong>Textbook.</strong></p>
+<ul>
+<li><strong>Stallings, W.</strong>, <em>Computer Organization and Architecture: Designing for Performance</em>, 10th ed., Pearson, 2016.</li>
+</ul>
+<p><strong>References.</strong></p>
+<ul>
+<li><strong>Mano, M. M.</strong>, <em>Computer System Architecture</em>, 3rd ed., Prentice Hall, 1993.</li>
+<li><strong>Patterson, D. A. &amp; Hennessy, J. L.</strong>, <em>Computer Architecture: A Quantitative Approach</em>, 6th ed., Morgan Kaufmann, 2017.</li>
+<li><strong>Wilkinson, B.</strong>, <em>Computer Architecture: Design and Performance</em>, 2nd ed., Prentice Hall, 1996.</li>
+</ul>
+<hr />
+<h2 id="policies">Policies<a class="headerlink" href="#policies" title="Permanent link">&para;</a></h2>
+<ul>
+<li><strong>Attendance:</strong> minimum <strong>75%</strong> lecture attendance.</li>
+<li><strong>Late work:</strong> 10% per day, zero after 3 days.</li>
+<li><strong>Academic integrity:</strong> all submitted work must be your own. Logisim circuits are submitted individually.</li>
+</ul>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8v12Z"/></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    <script id="__config" type="application/json">{"base": "..", "features": ["navigation.tabs", "navigation.sections", "navigation.top", "navigation.indexes", "navigation.tracking", "content.code.copy", "search.suggest", "search.highlight", "toc.follow"], "search": "../assets/javascripts/workers/search.f886a092.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.d7c377c4.min.js"></script>
+      
+        <script src="../javascripts/mathjax.js"></script>
+      
+        <script src="https://unpkg.com/mathjax@3/es5/tex-mml-chtml.js"></script>
+      
+    
+  </body>
+</html>

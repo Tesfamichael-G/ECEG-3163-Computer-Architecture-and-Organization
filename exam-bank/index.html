@@ -1,0 +1,2545 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="BSc Electrical Engineering (Computer) · Semester VII · Module Data Storage and Analysis">
+      
+      
+        <meta name="author" content="Your Name">
+      
+      
+        <link rel="canonical" href="https://tesfamichael-g.github.io/ECEG-3163-Computer-Architecture-and-Organization/exam-bank/">
+      
+      
+        <link rel="prev" href="../solutions/07-advanced-topics/">
+      
+      
+        <link rel="next" href="../assessment/">
+      
+      
+      <link rel="icon" href="../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.5.3, mkdocs-material-9.5.3">
+    
+    
+      
+        <title>Exam Bank - ECEG-4192 — Data Structures</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.50c56a3b.min.css">
+      
+        
+        <link rel="stylesheet" href="../assets/stylesheets/palette.06af60db.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#exam-bank-eceg-3163-computer-architecture-and-organization" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href=".." title="ECEG-4192 — Data Structures" class="md-header__button md-logo" aria-label="ECEG-4192 — Data Structures" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 3h6v4H3V3m12 7h6v4h-6v-4m0 7h6v4h-6v-4m-2-4H7v5h6v2H5V9h2v2h6v2Z"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            ECEG-4192 — Data Structures
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Exam Bank
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m17.75 4.09-2.53 1.94.91 3.06-2.63-1.81-2.63 1.81.91-3.06-2.53-1.94L12.44 4l1.06-3 1.06 3 3.19.09m3.5 6.91-1.64 1.25.59 1.98-1.7-1.17-1.7 1.17.59-1.98L15.75 11l2.06-.05L18.5 9l.69 1.95 2.06.05m-2.28 4.95c.83-.08 1.72 1.1 1.19 1.85-.32.45-.66.87-1.08 1.27C15.17 23 8.84 23 4.94 19.07c-3.91-3.9-3.91-10.24 0-14.14.4-.4.82-.76 1.27-1.08.75-.53 1.93.36 1.85 1.19-.27 2.86.69 5.83 2.89 8.02a9.96 9.96 0 0 0 8.02 2.89m-1.64 2.02a12.08 12.08 0 0 1-7.8-3.47c-2.17-2.19-3.33-5-3.49-7.82-2.81 3.14-2.7 7.96.31 10.98 3.02 3.01 7.84 3.12 10.98.31Z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 7a5 5 0 0 1 5 5 5 5 0 0 1-5 5 5 5 0 0 1-5-5 5 5 0 0 1 5-5m0 2a3 3 0 0 0-3 3 3 3 0 0 0 3 3 3 3 0 0 0 3-3 3 3 0 0 0-3-3m0-7 2.39 3.42C13.65 5.15 12.84 5 12 5c-.84 0-1.65.15-2.39.42L12 2M3.34 7l4.16-.35A7.2 7.2 0 0 0 5.94 8.5c-.44.74-.69 1.5-.83 2.29L3.34 7m.02 10 1.76-3.77a7.131 7.131 0 0 0 2.38 4.14L3.36 17M20.65 7l-1.77 3.79a7.023 7.023 0 0 0-2.38-4.15l4.15.36m-.01 10-4.14.36c.59-.51 1.12-1.14 1.54-1.86.42-.73.69-1.5.83-2.29L20.64 17M12 22l-2.41-3.44c.74.27 1.55.44 2.41.44.82 0 1.63-.17 2.37-.44L12 22Z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var media,input,key,value,palette=__md_get("__palette");if(palette&&palette.color){"(prefers-color-scheme)"===palette.color.media&&(media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']"),palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent"));for([key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href=".." class="md-tabs__link">
+        
+  
+    
+  
+  Home
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../syllabus/" class="md-tabs__link">
+        
+  
+    
+  
+  Syllabus
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../schedule/" class="md-tabs__link">
+        
+  
+    
+  
+  Schedule
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../chapters/01-introduction-performance/" class="md-tabs__link">
+          
+  
+    
+  
+  Chapters
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../slides/01-introduction-performance/" class="md-tabs__link">
+          
+  
+    
+  
+  Slides
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../solutions/" class="md-tabs__link">
+          
+  
+    
+  
+  Solutions
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+    
+  
+  
+    <li class="md-tabs__item md-tabs__item--active">
+      <a href="./" class="md-tabs__link">
+        
+  
+    
+  
+  Exam Bank
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../assessment/" class="md-tabs__link">
+        
+  
+    
+  
+  Assessment
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../resources/" class="md-tabs__link">
+        
+  
+    
+  
+  Resources
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../feedback/" class="md-tabs__link">
+        
+  
+    
+  
+  Feedback
+
+      </a>
+    </li>
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="ECEG-4192 — Data Structures" class="md-nav__button md-logo" aria-label="ECEG-4192 — Data Structures" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 3h6v4H3V3m12 7h6v4h-6v-4m0 7h6v4h-6v-4m-2-4H7v5h6v2H5V9h2v2h6v2Z"/></svg>
+
+    </a>
+    ECEG-4192 — Data Structures
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href=".." class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Home
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../syllabus/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Syllabus
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../schedule/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Schedule
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+      
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="">
+            
+  
+  <span class="md-ellipsis">
+    Chapters
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            Chapters
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../chapters/01-introduction-performance/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    1. Introduction and Performance
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../chapters/02-computer-arithmetic/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    2. Computer Arithmetic
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../chapters/03-instruction-sets/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    3. Instruction Sets
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../chapters/04-pipelining-control/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    4. Pipelining and Control
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../chapters/05-memory-systems/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    5. Memory Systems
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../chapters/06-io-systems/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    6. I/O Systems
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../chapters/07-advanced-topics/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    7. Advanced Topics
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+      
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="">
+            
+  
+  <span class="md-ellipsis">
+    Slides
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            Slides
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../slides/01-introduction-performance/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    1. Introduction and Performance
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../slides/02-computer-arithmetic/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    2. Computer Arithmetic
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../slides/03-instruction-sets/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    3. Instruction Sets
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../slides/04-pipelining-control/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    4. Pipelining and Control
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../slides/05-memory-systems/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    5. Memory Systems
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../slides/06-io-systems/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    6. I/O Systems
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../slides/07-advanced-topics/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    7. Advanced Topics
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+      
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6" >
+        
+          
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../solutions/" class="md-nav__link ">
+              
+  
+  <span class="md-ellipsis">
+    Solutions
+  </span>
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_6" id="__nav_6_label" tabindex="">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6">
+            <span class="md-nav__icon md-icon"></span>
+            Solutions
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../solutions/01-introduction-performance/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    1. Introduction and Performance
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../solutions/02-computer-arithmetic/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    2. Computer Arithmetic
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../solutions/03-instruction-sets/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    3. Instruction Sets
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../solutions/04-pipelining-control/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    4. Pipelining and Control
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../solutions/05-memory-systems/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    5. Memory Systems
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../solutions/06-io-systems/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    6. I/O Systems
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../solutions/07-advanced-topics/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    7. Advanced Topics
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    Exam Bank
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  <span class="md-ellipsis">
+    Exam Bank
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#section-a-introduction-and-performance-ch-1-12-marks" class="md-nav__link">
+    <span class="md-ellipsis">
+      Section A — Introduction and Performance (Ch 1) — 12 marks
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Section A — Introduction and Performance (Ch 1) — 12 marks">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#a1-multiple-choice-2" class="md-nav__link">
+    <span class="md-ellipsis">
+      A1. Multiple choice [2]
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#a2-multiple-choice-2" class="md-nav__link">
+    <span class="md-ellipsis">
+      A2. Multiple choice [2]
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#a3-multiple-choice-2" class="md-nav__link">
+    <span class="md-ellipsis">
+      A3. Multiple choice [2]
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#a4-short-answer-3" class="md-nav__link">
+    <span class="md-ellipsis">
+      A4. Short answer [3]
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#a5-short-answer-3" class="md-nav__link">
+    <span class="md-ellipsis">
+      A5. Short answer [3]
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#section-b-computer-arithmetic-ch-2-15-marks" class="md-nav__link">
+    <span class="md-ellipsis">
+      Section B — Computer Arithmetic (Ch 2) — 15 marks
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Section B — Computer Arithmetic (Ch 2) — 15 marks">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#b1-multiple-choice-2" class="md-nav__link">
+    <span class="md-ellipsis">
+      B1. Multiple choice [2]
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#b2-multiple-choice-2" class="md-nav__link">
+    <span class="md-ellipsis">
+      B2. Multiple choice [2]
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#b3-multiple-choice-2" class="md-nav__link">
+    <span class="md-ellipsis">
+      B3. Multiple choice [2]
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#b4-short-answer-3" class="md-nav__link">
+    <span class="md-ellipsis">
+      B4. Short answer [3]
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#b5-short-answer-3" class="md-nav__link">
+    <span class="md-ellipsis">
+      B5. Short answer [3]
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#b6-short-answer-3" class="md-nav__link">
+    <span class="md-ellipsis">
+      B6. Short answer [3]
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#section-c-instruction-sets-and-cpu-structure-ch-3-15-marks" class="md-nav__link">
+    <span class="md-ellipsis">
+      Section C — Instruction Sets and CPU Structure (Ch 3) — 15 marks
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Section C — Instruction Sets and CPU Structure (Ch 3) — 15 marks">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#c1-multiple-choice-2" class="md-nav__link">
+    <span class="md-ellipsis">
+      C1. Multiple choice [2]
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#c2-multiple-choice-2" class="md-nav__link">
+    <span class="md-ellipsis">
+      C2. Multiple choice [2]
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#c3-multiple-choice-2" class="md-nav__link">
+    <span class="md-ellipsis">
+      C3. Multiple choice [2]
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#c4-short-answer-4" class="md-nav__link">
+    <span class="md-ellipsis">
+      C4. Short answer [4]
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#c5-short-answer-3" class="md-nav__link">
+    <span class="md-ellipsis">
+      C5. Short answer [3]
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#c6-short-answer-2" class="md-nav__link">
+    <span class="md-ellipsis">
+      C6. Short answer [2]
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#section-d-pipelining-and-control-unit-ch-4-18-marks" class="md-nav__link">
+    <span class="md-ellipsis">
+      Section D — Pipelining and Control Unit (Ch 4) — 18 marks
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Section D — Pipelining and Control Unit (Ch 4) — 18 marks">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#d1-multiple-choice-2" class="md-nav__link">
+    <span class="md-ellipsis">
+      D1. Multiple choice [2]
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#d2-multiple-choice-2" class="md-nav__link">
+    <span class="md-ellipsis">
+      D2. Multiple choice [2]
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#d3-multiple-choice-2" class="md-nav__link">
+    <span class="md-ellipsis">
+      D3. Multiple choice [2]
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#d4-short-answer-4" class="md-nav__link">
+    <span class="md-ellipsis">
+      D4. Short answer [4]
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#d5-short-answer-4" class="md-nav__link">
+    <span class="md-ellipsis">
+      D5. Short answer [4]
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#d6-short-answer-4" class="md-nav__link">
+    <span class="md-ellipsis">
+      D6. Short answer [4]
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#section-e-memory-systems-ch-5-20-marks" class="md-nav__link">
+    <span class="md-ellipsis">
+      Section E — Memory Systems (Ch 5) — 20 marks
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Section E — Memory Systems (Ch 5) — 20 marks">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#e1-multiple-choice-2" class="md-nav__link">
+    <span class="md-ellipsis">
+      E1. Multiple choice [2]
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#e2-multiple-choice-2" class="md-nav__link">
+    <span class="md-ellipsis">
+      E2. Multiple choice [2]
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#e3-multiple-choice-2" class="md-nav__link">
+    <span class="md-ellipsis">
+      E3. Multiple choice [2]
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#e4-multiple-choice-2" class="md-nav__link">
+    <span class="md-ellipsis">
+      E4. Multiple choice [2]
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#e5-short-answer-4" class="md-nav__link">
+    <span class="md-ellipsis">
+      E5. Short answer [4]
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#e6-short-answer-4" class="md-nav__link">
+    <span class="md-ellipsis">
+      E6. Short answer [4]
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#e7-short-answer-4" class="md-nav__link">
+    <span class="md-ellipsis">
+      E7. Short answer [4]
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#e8-short-answer-2" class="md-nav__link">
+    <span class="md-ellipsis">
+      E8. Short answer [2]
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#section-f-io-systems-ch-6-12-marks" class="md-nav__link">
+    <span class="md-ellipsis">
+      Section F — I/O Systems (Ch 6) — 12 marks
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Section F — I/O Systems (Ch 6) — 12 marks">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#f1-multiple-choice-2" class="md-nav__link">
+    <span class="md-ellipsis">
+      F1. Multiple choice [2]
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#f2-multiple-choice-2" class="md-nav__link">
+    <span class="md-ellipsis">
+      F2. Multiple choice [2]
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#f3-short-answer-4" class="md-nav__link">
+    <span class="md-ellipsis">
+      F3. Short answer [4]
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#f4-short-answer-4" class="md-nav__link">
+    <span class="md-ellipsis">
+      F4. Short answer [4]
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#section-g-advanced-topics-ch-7-8-marks" class="md-nav__link">
+    <span class="md-ellipsis">
+      Section G — Advanced Topics (Ch 7) — 8 marks
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Section G — Advanced Topics (Ch 7) — 8 marks">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#g1-multiple-choice-2" class="md-nav__link">
+    <span class="md-ellipsis">
+      G1. Multiple choice [2]
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#g2-multiple-choice-2" class="md-nav__link">
+    <span class="md-ellipsis">
+      G2. Multiple choice [2]
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#g3-short-answer-4" class="md-nav__link">
+    <span class="md-ellipsis">
+      G3. Short answer [4]
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#grading-rubric" class="md-nav__link">
+    <span class="md-ellipsis">
+      Grading rubric
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#answer-key" class="md-nav__link">
+    <span class="md-ellipsis">
+      Answer key
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../assessment/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Assessment
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../resources/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Resources
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../feedback/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Feedback
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#section-a-introduction-and-performance-ch-1-12-marks" class="md-nav__link">
+    <span class="md-ellipsis">
+      Section A — Introduction and Performance (Ch 1) — 12 marks
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Section A — Introduction and Performance (Ch 1) — 12 marks">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#a1-multiple-choice-2" class="md-nav__link">
+    <span class="md-ellipsis">
+      A1. Multiple choice [2]
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#a2-multiple-choice-2" class="md-nav__link">
+    <span class="md-ellipsis">
+      A2. Multiple choice [2]
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#a3-multiple-choice-2" class="md-nav__link">
+    <span class="md-ellipsis">
+      A3. Multiple choice [2]
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#a4-short-answer-3" class="md-nav__link">
+    <span class="md-ellipsis">
+      A4. Short answer [3]
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#a5-short-answer-3" class="md-nav__link">
+    <span class="md-ellipsis">
+      A5. Short answer [3]
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#section-b-computer-arithmetic-ch-2-15-marks" class="md-nav__link">
+    <span class="md-ellipsis">
+      Section B — Computer Arithmetic (Ch 2) — 15 marks
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Section B — Computer Arithmetic (Ch 2) — 15 marks">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#b1-multiple-choice-2" class="md-nav__link">
+    <span class="md-ellipsis">
+      B1. Multiple choice [2]
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#b2-multiple-choice-2" class="md-nav__link">
+    <span class="md-ellipsis">
+      B2. Multiple choice [2]
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#b3-multiple-choice-2" class="md-nav__link">
+    <span class="md-ellipsis">
+      B3. Multiple choice [2]
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#b4-short-answer-3" class="md-nav__link">
+    <span class="md-ellipsis">
+      B4. Short answer [3]
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#b5-short-answer-3" class="md-nav__link">
+    <span class="md-ellipsis">
+      B5. Short answer [3]
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#b6-short-answer-3" class="md-nav__link">
+    <span class="md-ellipsis">
+      B6. Short answer [3]
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#section-c-instruction-sets-and-cpu-structure-ch-3-15-marks" class="md-nav__link">
+    <span class="md-ellipsis">
+      Section C — Instruction Sets and CPU Structure (Ch 3) — 15 marks
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Section C — Instruction Sets and CPU Structure (Ch 3) — 15 marks">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#c1-multiple-choice-2" class="md-nav__link">
+    <span class="md-ellipsis">
+      C1. Multiple choice [2]
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#c2-multiple-choice-2" class="md-nav__link">
+    <span class="md-ellipsis">
+      C2. Multiple choice [2]
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#c3-multiple-choice-2" class="md-nav__link">
+    <span class="md-ellipsis">
+      C3. Multiple choice [2]
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#c4-short-answer-4" class="md-nav__link">
+    <span class="md-ellipsis">
+      C4. Short answer [4]
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#c5-short-answer-3" class="md-nav__link">
+    <span class="md-ellipsis">
+      C5. Short answer [3]
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#c6-short-answer-2" class="md-nav__link">
+    <span class="md-ellipsis">
+      C6. Short answer [2]
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#section-d-pipelining-and-control-unit-ch-4-18-marks" class="md-nav__link">
+    <span class="md-ellipsis">
+      Section D — Pipelining and Control Unit (Ch 4) — 18 marks
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Section D — Pipelining and Control Unit (Ch 4) — 18 marks">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#d1-multiple-choice-2" class="md-nav__link">
+    <span class="md-ellipsis">
+      D1. Multiple choice [2]
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#d2-multiple-choice-2" class="md-nav__link">
+    <span class="md-ellipsis">
+      D2. Multiple choice [2]
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#d3-multiple-choice-2" class="md-nav__link">
+    <span class="md-ellipsis">
+      D3. Multiple choice [2]
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#d4-short-answer-4" class="md-nav__link">
+    <span class="md-ellipsis">
+      D4. Short answer [4]
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#d5-short-answer-4" class="md-nav__link">
+    <span class="md-ellipsis">
+      D5. Short answer [4]
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#d6-short-answer-4" class="md-nav__link">
+    <span class="md-ellipsis">
+      D6. Short answer [4]
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#section-e-memory-systems-ch-5-20-marks" class="md-nav__link">
+    <span class="md-ellipsis">
+      Section E — Memory Systems (Ch 5) — 20 marks
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Section E — Memory Systems (Ch 5) — 20 marks">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#e1-multiple-choice-2" class="md-nav__link">
+    <span class="md-ellipsis">
+      E1. Multiple choice [2]
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#e2-multiple-choice-2" class="md-nav__link">
+    <span class="md-ellipsis">
+      E2. Multiple choice [2]
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#e3-multiple-choice-2" class="md-nav__link">
+    <span class="md-ellipsis">
+      E3. Multiple choice [2]
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#e4-multiple-choice-2" class="md-nav__link">
+    <span class="md-ellipsis">
+      E4. Multiple choice [2]
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#e5-short-answer-4" class="md-nav__link">
+    <span class="md-ellipsis">
+      E5. Short answer [4]
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#e6-short-answer-4" class="md-nav__link">
+    <span class="md-ellipsis">
+      E6. Short answer [4]
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#e7-short-answer-4" class="md-nav__link">
+    <span class="md-ellipsis">
+      E7. Short answer [4]
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#e8-short-answer-2" class="md-nav__link">
+    <span class="md-ellipsis">
+      E8. Short answer [2]
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#section-f-io-systems-ch-6-12-marks" class="md-nav__link">
+    <span class="md-ellipsis">
+      Section F — I/O Systems (Ch 6) — 12 marks
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Section F — I/O Systems (Ch 6) — 12 marks">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#f1-multiple-choice-2" class="md-nav__link">
+    <span class="md-ellipsis">
+      F1. Multiple choice [2]
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#f2-multiple-choice-2" class="md-nav__link">
+    <span class="md-ellipsis">
+      F2. Multiple choice [2]
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#f3-short-answer-4" class="md-nav__link">
+    <span class="md-ellipsis">
+      F3. Short answer [4]
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#f4-short-answer-4" class="md-nav__link">
+    <span class="md-ellipsis">
+      F4. Short answer [4]
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#section-g-advanced-topics-ch-7-8-marks" class="md-nav__link">
+    <span class="md-ellipsis">
+      Section G — Advanced Topics (Ch 7) — 8 marks
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Section G — Advanced Topics (Ch 7) — 8 marks">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#g1-multiple-choice-2" class="md-nav__link">
+    <span class="md-ellipsis">
+      G1. Multiple choice [2]
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#g2-multiple-choice-2" class="md-nav__link">
+    <span class="md-ellipsis">
+      G2. Multiple choice [2]
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#g3-short-answer-4" class="md-nav__link">
+    <span class="md-ellipsis">
+      G3. Short answer [4]
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#grading-rubric" class="md-nav__link">
+    <span class="md-ellipsis">
+      Grading rubric
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#answer-key" class="md-nav__link">
+    <span class="md-ellipsis">
+      Answer key
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+<h1 id="exam-bank-eceg-3163-computer-architecture-and-organization">Exam Bank — ECEG-3163 Computer Architecture and Organization<a class="headerlink" href="#exam-bank-eceg-3163-computer-architecture-and-organization" title="Permanent link">&para;</a></h1>
+<p><strong>60 questions across all seven chapters.</strong> Use for self-assessment and exam preparation.</p>
+<p><strong>Instructions (mock exam):</strong></p>
+<ul>
+<li>Time: <strong>3 hours</strong></li>
+<li>Closed book; <strong>one A4 handwritten formula sheet</strong> allowed</li>
+<li>Non-programmable calculator permitted</li>
+<li>Total marks: <strong>100</strong></li>
+<li>Marks per question in brackets</li>
+</ul>
+<hr />
+<h2 id="section-a-introduction-and-performance-ch-1-12-marks">Section A — Introduction and Performance (Ch 1) — 12 marks<a class="headerlink" href="#section-a-introduction-and-performance-ch-1-12-marks" title="Permanent link">&para;</a></h2>
+<h3 id="a1-multiple-choice-2">A1. Multiple choice [2]<a class="headerlink" href="#a1-multiple-choice-2" title="Permanent link">&para;</a></h3>
+<p>Computer <strong>architecture</strong> refers to:</p>
+<p>(a) the physical implementation of the computer
+(b) attributes visible to a programmer (instruction set, data types, addressing)
+(c) the CPU clock speed
+(d) the operating system</p>
+<h3 id="a2-multiple-choice-2">A2. Multiple choice [2]<a class="headerlink" href="#a2-multiple-choice-2" title="Permanent link">&para;</a></h3>
+<p>Moore's law states that:</p>
+<p>(a) clock speed doubles every year
+(b) the number of transistors per chip doubles approximately every 18–24 months
+(c) memory access time halves every 2 years
+(d) CPU power consumption doubles every decade</p>
+<h3 id="a3-multiple-choice-2">A3. Multiple choice [2]<a class="headerlink" href="#a3-multiple-choice-2" title="Permanent link">&para;</a></h3>
+<p>The Von Neumann bottleneck refers to:</p>
+<p>(a) the limited number of registers
+(b) the transfer of instructions and data over a single bus
+(c) the width of the ALU
+(d) the cache size</p>
+<h3 id="a4-short-answer-3">A4. Short answer [3]<a class="headerlink" href="#a4-short-answer-3" title="Permanent link">&para;</a></h3>
+<p>Given a program with 10⁸ instructions, an average CPI of 2.5, and a 4 GHz clock, compute:
+(a) the CPU execution time;
+(b) the MIPS rating.</p>
+<h3 id="a5-short-answer-3">A5. Short answer [3]<a class="headerlink" href="#a5-short-answer-3" title="Permanent link">&para;</a></h3>
+<p>A program spends 60% of its time in a routine that can be made <strong>3× faster</strong>. Use <strong>Amdahl's law</strong> to compute the overall speedup.</p>
+<hr />
+<h2 id="section-b-computer-arithmetic-ch-2-15-marks">Section B — Computer Arithmetic (Ch 2) — 15 marks<a class="headerlink" href="#section-b-computer-arithmetic-ch-2-15-marks" title="Permanent link">&para;</a></h2>
+<h3 id="b1-multiple-choice-2">B1. Multiple choice [2]<a class="headerlink" href="#b1-multiple-choice-2" title="Permanent link">&para;</a></h3>
+<p>The decimal value of the 8-bit two's-complement number <code>11110110</code> is:</p>
+<p>(a) −10
+(b) −9
+(c) −11
+(d) +246</p>
+<h3 id="b2-multiple-choice-2">B2. Multiple choice [2]<a class="headerlink" href="#b2-multiple-choice-2" title="Permanent link">&para;</a></h3>
+<p>In IEEE-754 single precision, the exponent field is <strong>biased</strong> by:</p>
+<p>(a) 64
+(b) 127
+(c) 128
+(d) 255</p>
+<h3 id="b3-multiple-choice-2">B3. Multiple choice [2]<a class="headerlink" href="#b3-multiple-choice-2" title="Permanent link">&para;</a></h3>
+<p>Which multiplication algorithm handles signed numbers <strong>without</strong> any separate sign-handling step?</p>
+<p>(a) shift-add
+(b) Booth's algorithm
+(c) restoring division
+(d) non-restoring division</p>
+<h3 id="b4-short-answer-3">B4. Short answer [3]<a class="headerlink" href="#b4-short-answer-3" title="Permanent link">&para;</a></h3>
+<p>Represent the decimal number <strong>−45</strong> in 8-bit binary as:
+(a) sign-magnitude;
+(b) 1's complement;
+(c) 2's complement.</p>
+<h3 id="b5-short-answer-3">B5. Short answer [3]<a class="headerlink" href="#b5-short-answer-3" title="Permanent link">&para;</a></h3>
+<p>Add the 4-bit two's-complement numbers <code>0110</code> and <code>0101</code>. Give the result and state whether <strong>overflow</strong> occurred. Justify your answer with a bit-level argument.</p>
+<h3 id="b6-short-answer-3">B6. Short answer [3]<a class="headerlink" href="#b6-short-answer-3" title="Permanent link">&para;</a></h3>
+<p>Encode the decimal value <strong>6.75</strong> in <strong>IEEE-754 single precision</strong>. Show the sign bit, exponent field, mantissa field, and the final 32-bit hexadecimal value.</p>
+<hr />
+<h2 id="section-c-instruction-sets-and-cpu-structure-ch-3-15-marks">Section C — Instruction Sets and CPU Structure (Ch 3) — 15 marks<a class="headerlink" href="#section-c-instruction-sets-and-cpu-structure-ch-3-15-marks" title="Permanent link">&para;</a></h2>
+<h3 id="c1-multiple-choice-2">C1. Multiple choice [2]<a class="headerlink" href="#c1-multiple-choice-2" title="Permanent link">&para;</a></h3>
+<p>Which addressing mode computes the effective address as <strong>base register + constant offset</strong>?</p>
+<p>(a) immediate
+(b) direct
+(c) indexed / base+offset
+(d) register indirect</p>
+<h3 id="c2-multiple-choice-2">C2. Multiple choice [2]<a class="headerlink" href="#c2-multiple-choice-2" title="Permanent link">&para;</a></h3>
+<p>In MIPS, an <strong>R-type instruction</strong> includes fields:</p>
+<p>(a) opcode, address
+(b) opcode, rs, rt, immediate
+(c) opcode, rs, rt, rd, shamt, funct
+(d) opcode, target address</p>
+<h3 id="c3-multiple-choice-2">C3. Multiple choice [2]<a class="headerlink" href="#c3-multiple-choice-2" title="Permanent link">&para;</a></h3>
+<p>A <strong>RISC</strong> architecture is characterized by:</p>
+<p>(a) variable-length instructions and microcode
+(b) fixed-length instructions, load-store architecture, many registers
+(c) complex addressing modes
+(d) microcoded instruction execution</p>
+<h3 id="c4-short-answer-4">C4. Short answer [4]<a class="headerlink" href="#c4-short-answer-4" title="Permanent link">&para;</a></h3>
+<p>Decode the following MIPS machine instruction (hex): <code>0x012A4020</code>. Identify the <strong>format</strong>, the <strong>operation</strong>, the <strong>source and destination registers</strong>, and write the equivalent assembly.</p>
+<h3 id="c5-short-answer-3">C5. Short answer [3]<a class="headerlink" href="#c5-short-answer-3" title="Permanent link">&para;</a></h3>
+<p>Compare the <strong>number of memory accesses</strong> required for each of the following addressing modes to fetch a single operand from a register-based datapath:</p>
+<ul>
+<li>immediate</li>
+<li>register</li>
+<li>register indirect</li>
+<li>direct</li>
+<li>indirect</li>
+</ul>
+<p>Give the effective address formula for each.</p>
+<h3 id="c6-short-answer-2">C6. Short answer [2]<a class="headerlink" href="#c6-short-answer-2" title="Permanent link">&para;</a></h3>
+<p>Explain in one sentence why the <strong>program counter</strong> and the <strong>instruction register</strong> are essential for the Von Neumann instruction cycle.</p>
+<hr />
+<h2 id="section-d-pipelining-and-control-unit-ch-4-18-marks">Section D — Pipelining and Control Unit (Ch 4) — 18 marks<a class="headerlink" href="#section-d-pipelining-and-control-unit-ch-4-18-marks" title="Permanent link">&para;</a></h2>
+<h3 id="d1-multiple-choice-2">D1. Multiple choice [2]<a class="headerlink" href="#d1-multiple-choice-2" title="Permanent link">&para;</a></h3>
+<p>The maximum ideal speedup of a <strong>k-stage</strong> pipeline is:</p>
+<p>(a) <span class="arithmatex">\(k^2\)</span>
+(b) <span class="arithmatex">\(k\)</span>
+(c) <span class="arithmatex">\(\log_2 k\)</span>
+(d) <span class="arithmatex">\(2k\)</span></p>
+<h3 id="d2-multiple-choice-2">D2. Multiple choice [2]<a class="headerlink" href="#d2-multiple-choice-2" title="Permanent link">&para;</a></h3>
+<p>A <strong>structural hazard</strong> in a pipeline occurs when:</p>
+<p>(a) two instructions want the same hardware resource
+(b) an instruction depends on the result of a previous instruction
+(c) a branch is taken
+(d) a page fault occurs</p>
+<h3 id="d3-multiple-choice-2">D3. Multiple choice [2]<a class="headerlink" href="#d3-multiple-choice-2" title="Permanent link">&para;</a></h3>
+<p><strong>Branch prediction</strong> is used to address:</p>
+<p>(a) structural hazards
+(b) data hazards
+(c) control hazards
+(d) cache misses</p>
+<h3 id="d4-short-answer-4">D4. Short answer [4]<a class="headerlink" href="#d4-short-answer-4" title="Permanent link">&para;</a></h3>
+<p>Consider the instruction sequence:
+<div class="language-text highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>ADD  R1, R2, R3
+</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>SUB  R4, R1, R5
+</span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>AND  R6, R1, R7
+</span></code></pre></div>
+Identify all <strong>data hazards</strong>. For each hazard, state:
+(a) the type of hazard (RAW, WAR, WAW);
+(b) the number of stall cycles needed <strong>without</strong> forwarding;
+(c) how forwarding resolves it (or whether a stall is still needed).</p>
+<h3 id="d5-short-answer-4">D5. Short answer [4]<a class="headerlink" href="#d5-short-answer-4" title="Permanent link">&para;</a></h3>
+<p>Describe the <strong>difference</strong> between a <strong>hardwired</strong> and a <strong>microprogrammed</strong> control unit in terms of:
+(a) implementation complexity;
+(b) speed;
+(c) flexibility;
+(d) which architecture class (RISC or CISC) typically uses each.</p>
+<h3 id="d6-short-answer-4">D6. Short answer [4]<a class="headerlink" href="#d6-short-answer-4" title="Permanent link">&para;</a></h3>
+<p>A program has <strong>20% branch instructions</strong>. In a 5-stage pipeline, each taken branch causes a 2-cycle penalty. If branch prediction accuracy is 90%, compute the <strong>average CPI</strong> assuming the ideal CPI is 1.</p>
+<hr />
+<h2 id="section-e-memory-systems-ch-5-20-marks">Section E — Memory Systems (Ch 5) — 20 marks<a class="headerlink" href="#section-e-memory-systems-ch-5-20-marks" title="Permanent link">&para;</a></h2>
+<h3 id="e1-multiple-choice-2">E1. Multiple choice [2]<a class="headerlink" href="#e1-multiple-choice-2" title="Permanent link">&para;</a></h3>
+<p>The principle that justifies the memory hierarchy is:</p>
+<p>(a) Moore's law
+(b) Amdahl's law
+(c) locality of reference
+(d) the Von Neumann bottleneck</p>
+<h3 id="e2-multiple-choice-2">E2. Multiple choice [2]<a class="headerlink" href="#e2-multiple-choice-2" title="Permanent link">&para;</a></h3>
+<p>DRAM requires periodic <strong>refresh</strong> because:</p>
+<p>(a) it uses flip-flops
+(b) it stores each bit as charge on a capacitor that leaks
+(c) it is slower than SRAM
+(d) it is volatile</p>
+<h3 id="e3-multiple-choice-2">E3. Multiple choice [2]<a class="headerlink" href="#e3-multiple-choice-2" title="Permanent link">&para;</a></h3>
+<p>In a <strong>direct-mapped</strong> cache, the set is determined by:</p>
+<p>(a) the tag bits
+(b) the block-offset bits
+(c) the index bits
+(d) the entire address</p>
+<h3 id="e4-multiple-choice-2">E4. Multiple choice [2]<a class="headerlink" href="#e4-multiple-choice-2" title="Permanent link">&para;</a></h3>
+<p><strong>Write-back</strong> caching reduces memory traffic compared with <strong>write-through</strong> because:</p>
+<p>(a) every write goes to memory
+(b) writes accumulate in the cache and reach memory only when the block is evicted
+(c) it caches only reads
+(d) it uses larger blocks</p>
+<h3 id="e5-short-answer-4">E5. Short answer [4]<a class="headerlink" href="#e5-short-answer-4" title="Permanent link">&para;</a></h3>
+<p>A cache has:
+- 32 KB total size,
+- 64-byte blocks,
+- 4-way set associativity.</p>
+<p>Compute:
+(a) the number of blocks in the cache;
+(b) the number of sets;
+(c) the number of index bits;
+(d) the number of tag bits (for a 32-bit address);
+(e) the number of block-offset bits.</p>
+<h3 id="e6-short-answer-4">E6. Short answer [4]<a class="headerlink" href="#e6-short-answer-4" title="Permanent link">&para;</a></h3>
+<p>A cache has a hit time of <strong>2 ns</strong>, a miss penalty of <strong>40 ns</strong>, and a hit rate of <strong>95%</strong>. Compute the <strong>AMAT</strong> (average memory access time). Then compute the AMAT if the hit rate improves to 98%.</p>
+<h3 id="e7-short-answer-4">E7. Short answer [4]<a class="headerlink" href="#e7-short-answer-4" title="Permanent link">&para;</a></h3>
+<p>Explain the difference between <strong>paging</strong> and <strong>segmentation</strong>. Which one suffers from <strong>internal fragmentation</strong>? Which one from <strong>external fragmentation</strong>?</p>
+<h3 id="e8-short-answer-2">E8. Short answer [2]<a class="headerlink" href="#e8-short-answer-2" title="Permanent link">&para;</a></h3>
+<p>Briefly explain why an <strong>SSD</strong> has <strong>no seek time</strong>, and how this changes the relative performance of random versus sequential reads compared with an HDD.</p>
+<hr />
+<h2 id="section-f-io-systems-ch-6-12-marks">Section F — I/O Systems (Ch 6) — 12 marks<a class="headerlink" href="#section-f-io-systems-ch-6-12-marks" title="Permanent link">&para;</a></h2>
+<h3 id="f1-multiple-choice-2">F1. Multiple choice [2]<a class="headerlink" href="#f1-multiple-choice-2" title="Permanent link">&para;</a></h3>
+<p>In <strong>programmed I/O</strong>, the CPU:</p>
+<p>(a) is interrupted by the device
+(b) transfers data using DMA
+(c) continuously polls the device status register
+(d) uses a separate I/O processor</p>
+<h3 id="f2-multiple-choice-2">F2. Multiple choice [2]<a class="headerlink" href="#f2-multiple-choice-2" title="Permanent link">&para;</a></h3>
+<p><strong>DMA</strong> reduces CPU load because:</p>
+<p>(a) the CPU is slower
+(b) the DMA controller transfers data between memory and device without CPU intervention
+(c) it uses fewer interrupts
+(d) it transfers whole sectors</p>
+<h3 id="f3-short-answer-4">F3. Short answer [4]<a class="headerlink" href="#f3-short-answer-4" title="Permanent link">&para;</a></h3>
+<p>Compare <strong>programmed I/O</strong>, <strong>interrupt-driven I/O</strong>, and <strong>DMA</strong> on:
+(a) CPU involvement;
+(b) latency per transfer;
+(c) suitability for high-speed devices.</p>
+<h3 id="f4-short-answer-4">F4. Short answer [4]<a class="headerlink" href="#f4-short-answer-4" title="Permanent link">&para;</a></h3>
+<p>A disk has an average seek time of <strong>9 ms</strong>, a rotational speed of <strong>7200 RPM</strong>, and a transfer rate of <strong>150 MB/s</strong>. Compute:
+(a) the average rotational latency;
+(b) the average time to transfer a 4 KB block;
+(c) the total average service time for the transfer.</p>
+<hr />
+<h2 id="section-g-advanced-topics-ch-7-8-marks">Section G — Advanced Topics (Ch 7) — 8 marks<a class="headerlink" href="#section-g-advanced-topics-ch-7-8-marks" title="Permanent link">&para;</a></h2>
+<h3 id="g1-multiple-choice-2">G1. Multiple choice [2]<a class="headerlink" href="#g1-multiple-choice-2" title="Permanent link">&para;</a></h3>
+<p><strong>SIMD</strong> processing is best described as:</p>
+<p>(a) one instruction on one datum
+(b) one instruction on multiple data items
+(c) multiple instructions on one datum
+(d) multiple instructions on multiple data items</p>
+<h3 id="g2-multiple-choice-2">G2. Multiple choice [2]<a class="headerlink" href="#g2-multiple-choice-2" title="Permanent link">&para;</a></h3>
+<p>A <strong>GPU</strong> achieves high throughput mainly because it:</p>
+<p>(a) runs at a very high clock speed
+(b) uses thousands of simple cores to execute many threads in parallel
+(c) has a very large cache
+(d) uses faster memory than a CPU</p>
+<h3 id="g3-short-answer-4">G3. Short answer [4]<a class="headerlink" href="#g3-short-answer-4" title="Permanent link">&para;</a></h3>
+<p>For each of the following workloads, identify which architecture (SISD, SIMD, MIMD) is best suited and justify:</p>
+<p>(a) Adding two large matrices element-wise.
+(b) A single-threaded text editor.
+(c) A web server handling 10,000 simultaneous clients.
+(d) A scientific simulation with loosely coupled sub-tasks.</p>
+<hr />
+<h2 id="grading-rubric">Grading rubric<a class="headerlink" href="#grading-rubric" title="Permanent link">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th>Band</th>
+<th>Marks</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>A</td>
+<td>90–100</td>
+</tr>
+<tr>
+<td>B</td>
+<td>75–89</td>
+</tr>
+<tr>
+<td>C</td>
+<td>60–74</td>
+</tr>
+<tr>
+<td>F</td>
+<td>&lt; 60</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Common error checks:</strong></p>
+<ul>
+<li>Wrong CPI or clock calculation: −2.</li>
+<li>Off-by-one in addressing-mode memory-access counts: −1.</li>
+<li>Confusing write-through with write-back: −2.</li>
+<li>Missing <code>overflow</code> in 2's-complement addition: −1.</li>
+<li>Wrong pipeline stall count: −2.</li>
+<li>Using the wrong Amdahl's law formula: −2.</li>
+<li>Confusing internal with external fragmentation: −2.</li>
+<li>Treating GPU threads as CPUs: −1.</li>
+</ul>
+<hr />
+<h2 id="answer-key">Answer key<a class="headerlink" href="#answer-key" title="Permanent link">&para;</a></h2>
+<p>Full worked solutions are in the <a href="../solutions/index.md">Solutions</a> section — one file per chapter, each answering the corresponding section above.</p>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8v12Z"/></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    <script id="__config" type="application/json">{"base": "..", "features": ["navigation.tabs", "navigation.sections", "navigation.top", "navigation.indexes", "navigation.tracking", "content.code.copy", "search.suggest", "search.highlight", "toc.follow"], "search": "../assets/javascripts/workers/search.f886a092.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.d7c377c4.min.js"></script>
+      
+        <script src="../javascripts/mathjax.js"></script>
+      
+        <script src="https://unpkg.com/mathjax@3/es5/tex-mml-chtml.js"></script>
+      
+    
+  </body>
+</html>
